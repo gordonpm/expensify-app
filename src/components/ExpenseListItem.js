@@ -4,14 +4,11 @@ import { removeExpense } from '../actions/expenses';
 
 const ExpenseListItem = ({ dispatch, description, amount, createdAt, id }) => (
     <div>
-        <ul>
-            <li>Description: {description}</li>
-            <li>Amount: {amount}</li>
-            <li>Created At: {createdAt}</li>
-            <button onClick={(expense) => {
-                dispatch(removeExpense({id}));
-            }}>Remove</button>
-        </ul>
+        <h3>{description}</h3>
+        <p>{amount} - {createdAt}</p>
+        <button onClick={() => {
+            dispatch(removeExpense({ id }));
+        }}>Remove</button>
     </div>
 );
 
